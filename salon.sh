@@ -1,11 +1,6 @@
 #!/bin/bash
-# IMPORTANT: This shebang MUST be the very first line of your script, exactly as shown.
 
-# --- Database Connection Configuration ---
-# PSQL variable to connect to the 'salon' database with the 'freecodecamp' user.
-# -t: Turn off printing of column names and row count footers.
-# --no-align: Don't align fields, which is good for scripting as it avoids padding.
-# -c: Execute a single command string.
+
 PSQL="psql --username=freecodecamp --dbname=salon -t --no-align -c"
 
 # --- Functions ---
@@ -101,8 +96,7 @@ APPOINTMENT_MENU() {
   then
     # Output the success message exactly as required
     echo -e "\nI have put you down for a $SERVICE_NAME at $SERVICE_TIME, $LOCAL_CUSTOMER_NAME."
-    # IMPORTANT: The script will naturally exit here because MAIN_MENU is not in a loop.
-    # Do NOT add an 'exit' command here, as it might interfere with how tests run.
+
   else
     echo -e "\nFailed to book appointment. Please try again."
   fi
